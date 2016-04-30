@@ -1,1 +1,2 @@
-# Here are the solutions to the tasks I've been given while studying Python and Ruby.
+# 101
+Here are the solutions to the tasks I've been given while studying Python and Ruby.
