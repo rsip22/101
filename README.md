@@ -1,2 +1,8 @@
 # 101
-Here are the solutions to the tasks I've been given while studying Python and Ruby.
+Hi!
+
+I'm teaching myself how to code and here are the solutions to the tasks I've come across on the internet while studying Python and Ruby.
+
+I hope they can help anyone studying on their own like me.
+
+Enjoy!
