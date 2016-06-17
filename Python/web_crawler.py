@@ -23,17 +23,19 @@ def web_crawler(url, position, times) :
 	soup = BeautifulSoup(html)
 
 	while counter < int(times) :
-		soup = BeautifulSoup(html)
+		soup = BeautifulSoup(html) # opens a url
 
-		for link in soup.findAll('a', href=True):
-			links.append(link.get('href', None))
+		for link in soup.findAll('a', href=True): # gets all anchors
+			links.append(link.get('href', None)) # gets all href from the anchor tags and adds to the links list
 
-		newUrl = links[int(position)-1]
-		print newUrl
-		html = urllib.urlopen(newUrl).read()
-		links[:]=[]
+		newUrl = links[int(position)-1] # defines the new url to be opened - because the list index starts at 0, but "position" doesn't, we have to add -1
+
+		print newUrl #to keep track of the links opened
+
+		html = urllib.urlopen(newUrl).read() # goes to the new url
+		links[:]=[] # clears out the links list
 		
-		counter += 1
+		counter += 1 # moves on with the counting
 		
 	print "Final URL is: ", newUrl
 
