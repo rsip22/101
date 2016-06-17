@@ -23,7 +23,7 @@ def web_crawler(url, position, times) :
 	soup = BeautifulSoup(html)
 
 	while counter < int(times) :
-		soup = BeautifulSoup(html) # opens a url
+		soup = BeautifulSoup(html) # opens an url
 
 		for link in soup.findAll('a', href=True): # gets all anchors
 			links.append(link.get('href', None)) # gets all href from the anchor tags and adds to the links list
