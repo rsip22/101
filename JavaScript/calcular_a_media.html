@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+    <meta charset = "UTF-8">
+        <title>Calcular a média</title>
+
+        <script type="text/javascript">
+        var nome = "Renata"
+        var turma = "2info1"
+        var disciplina = "Javascript"
+        var nota1 = 9
+        var nota2 = 5.3
+        var nota3 = 7.2
+        var media = parseInt((nota1 + nota2 + nota3) / 3)
+        document.write("Aluno(a): "+ nome + "<br>");
+        document.write("Turma: "+ turma + "<br>");
+        document.write("Disciplina: "+ disciplina + "<br>");
+        document.write("Média final: "+ media + "<br>");
+
+        function media_final(valor) {
+            switch(media) {
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    status = "Situação: APROVADO(A)!";
+                    break;
+                default:
+                    status = "Situação: REPROVADO(A)";
+                    break;
+                }
+            return status;
+            }
+        document.write(media_final(media));
+ 
+        </script>
+    </head>
+
+    <body>
+        
+    </body>
+
+</html>
