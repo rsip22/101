@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    <meta charset = "UTF-8">
+        <title>Programa da Nota Fiscal</title>
+        <style type="text/css">
+            .center {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            table, th, tr, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: .2em;
+            }
+            th {
+                background-color: #e5e5e5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="center">
+            
+            <h1>Programa da Nota Fiscal</h1>
+
+            <script type="text/javascript">
+
+            document.write("<table>")
+            document.write("<tr><th>Cód.</th><th>Descrição</th><th>Qntd.</th><th>Valor un.</th><th>Total</th><br>");
+
+            var parcial = 0
+
+            for (i = 1; i <= 10; i++){
+                var codigo = parseInt(prompt("Código: "))
+                var qtde = parseInt(prompt("Unidades: "))
+                parcial = parcial + (valor() * qtde)
+                document.write("<tr>");
+                document.write("<td>" + codigo + "</td><td>" + produto() + "</td><td>" + qtde + "</td><td>" + "R$ " + valor() + "</td><td>" + "R$ " + parcial.toFixed(2) + "</td>");
+                document.write("</tr>");
+
+            }
+
+            var frete = parcial * 0.3
+            var total = parcial + frete
+
+            document.write("</table>")
+            document.write("<p>Total dos itens: R$ " + parcial.toFixed(2) + "</p>")
+            document.write("<p>Valor do frete (3%): R$ " + frete.toFixed(2) + "</p>")
+            document.write("<p>Total da Nota Fiscal: R$ " + total.toFixed(2) + "</p>")
+
+            function produto() {
+                switch(codigo) {
+                        case 10:
+                            status = "Suco 355ml";
+                            break;
+                        case 11:
+                            status = "Refrigerante 600ml";
+                            break;
+                        case 12:
+                            status = "Refrigerante lata";
+                            break;
+                        case 13:
+                            status = "Refrigerante 2 litros";
+                            break;
+                        case 14:
+                            status = "Cerveja 600ml";
+                            break;
+                        case 15:
+                            status = "Cerveja lata 350ml";
+                            break;
+                        case 16:
+                            status = "Água mineral sem gás 2 litros";
+                            break;
+                        case 17:
+                            status = "Água mineral com gás 2 litros";
+                            break;
+                        case 18:
+                            status = "Água mineral sem gás 600ml";
+                            break;
+                        case 19:
+                            status = "Água mineral com gás 600ml";
+                            break;
+                        default:
+                            status = prompt("Produto: ");
+                            break;
+                        }
+                    return status
+                }
+
+            function valor() {
+                switch(codigo) {
+                        case 10:
+                            status = 5.00;
+                            break;
+                        case 11:
+                            status = 6.00;
+                            break;
+                        case 12:
+                            status = 4.00;
+                            break;
+                        case 13:
+                            status = 2.00;
+                            break;
+                        case 14:
+                            status = 10.00;
+                            break;
+                        case 15:
+                            status = 5.00;
+                            break;
+                        case 16:
+                            status = 4.00;
+                            break;
+                        case 17:
+                            status = 5.00;
+                            break;
+                        case 18:
+                            status = 2.59;
+                            break;
+                        case 19:
+                            status = 3.00;
+                            break;
+                        default:
+                            status = parseFloat(prompt("Valor: "));
+                            break;
+                        }
+                    return status
+                }
+
+            </script>
+        </div>
+    </body>
+</html>

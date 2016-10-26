@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+    <meta charset = "UTF-8">
+        <title>Calcular o IMC (Índice de Massa Corporal)</title>
+
+        <style type="text/css">
+            .center {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .text-center {
+                text-align: center;
+            }
+        </style>
+
+        <script type="text/javascript">
+            document.write('<div class="center">');
+            document.write('<h1 class="text-center">Programa de cálculo do IMC</h1></br>');
+
+            for (i = 1; i <= 10; i++){
+                var nome = prompt('Digite seu nome: ')
+                var peso = parseFloat(prompt('Digite seu peso em kg: '))
+                var altura = parseFloat(prompt('Digite sua altura em metros: '))
+                var imc = peso / (Math.pow(altura, 2))
+                document.write('Nome: '+nome+' <br>'); 
+                document.write('Peso: '+peso+' kg <br>'); 
+                document.write('Altura: '+altura+' m <br>'); 
+                document.write('Seu IMC é: '+imc.toFixed(1)+'<br>');     
+
+                function index() {
+                    if (imc >= 40){
+                        document.write('Obesidade grau III')
+                        }
+                    else if (imc < 40 && imc >= 35){
+                        document.write('Obesidade grau II')
+                        }
+                    else if (imc < 35 && imc >= 30){
+                        document.write('Obesidade grau I')
+                        }
+                    else if (imc < 30 && imc >= 25){
+                        document.write('Você está acima de seu peso (sobrepeso).')
+                        }
+                    else if (imc < 25 && imc >= 18.5 ){
+                        document.write('Parabéns - você está em seu peso normal! <br>');
+                        }
+                    else if (imc < 18.5) {
+                        document.write('Você está abaixo do peso ideal. <br>');
+                        }
+                    }
+                index(imc);
+                document.write('<hr>');
+            }
+            document.write('</div>');
+        </script>
+    </head>
+
+    <body>
+        
+    </body>
+
+</html>
