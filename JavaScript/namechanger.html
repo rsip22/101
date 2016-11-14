@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name changer</title>
+</head>
+<body>
+  <script>
+
+  // Manipule a string para assegurar que o primeiro nome tenha a primeira letra maiúscula e o sobrenome esteja totalmente em maiúsculas. Vamos supor que há um espaço entre os nomes. Por exemplo, transformando uma string como "AlbERt EINstEiN" em "Albert EINSTEIN". Sua resposta deve ser uma única string salva na variável denominada finalName.
+
+  function namechanger(oldName) {
+    var finalName = oldName;
+    var allname = oldName.split(' ');
+    var firstname = allname[0].charAt(0).toUpperCase() + allname[0].toLowerCase().slice(1);
+    var lastname = allname[1].toUpperCase();
+    finalName = firstname + " " + lastname
+
+  return finalName;
+  };
+
+  document.write(namechanger("AlbERt EINstEiN"));
+  </script>
+</body>
+</html>
