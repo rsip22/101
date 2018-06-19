@@ -33,7 +33,6 @@ def get_cities():
     count = 0
 
     try:
-        # for item in cities:
         get_city = driver.find_elements_by_class_name("city")
         for item in get_city:
             count = count + 1
