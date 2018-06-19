@@ -24,7 +24,7 @@ import data_source as website
 
 
 def get_cities():
-    """ Gets a list of cities from the website """
+    """ Get a list of cities from the website """
 
     driver = webdriver.Firefox()
     driver.get(website.data['url'])
@@ -50,7 +50,7 @@ def get_cities():
 
 
 def create_txt():
-    """Saves txt to local machine with the info"""
+    """Save txt to local machine with the info"""
 
     locations = get_cities()
 
