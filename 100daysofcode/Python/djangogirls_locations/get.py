@@ -16,48 +16,70 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import selenium
+import json
+import csv
+import sys
 from selenium import webdriver
 import data_source as website
 
 
 def get_cities():
+    """ Gets a list of cities from the website """
+
     driver = webdriver.Firefox()
     driver.get(website.data['url'])
 
-    cities = list()
-    cities = driver.find_elements_by_class_name("overlay")
+    locations = list()
+    count = 0
 
     try:
-        for item in cities:
-            print('item', item)
-            """
-            location = driver.find_element_by_class("city")
-            cities.append(location)
-            """
-        print('Cities: ', cities)
+        # for item in cities:
+        get_city = driver.find_elements_by_class_name("city")
+        for item in get_city:
+            count = count + 1
+            print(count, '-', item.text)
+            locations.append(item.text)
 
-        """
-        input.send_keys(website.data['login'])
-        driver.find_element_by_id('login-form').submit()
-        """
+        print('total cities:', count)
+
+        driver.close()
+
+        return locations
 
     except selenium.common.exceptions.NoSuchElementException:
         print('Element not found .')
 
-    driver.close()
 
-    """
+def create_txt():
+    """Saves txt to local machine with the info"""
 
-    cookies = driver.get_cookies()
-    django_session = cookies[0]['value']
-    new = str('django_session=' + django_session)
-    cookie_file = website.data['location']
-    print('Cookie file:', cookie_file)
+    locations = get_cities()
 
-    with open(cookie_file, 'w') as file:
+    cities_list = website.data['location']
+    print('Cities file:', cities_list)
+
+    with open(cities_list, 'w') as file:
+        new = 'Locations: ' + str(locations)
         file.write(new)
+
+
+"""
+def create_json(data_source, file_name):
     
-    """
+    Saves JSON to local machine with the info
+    
+    path_to_file = sys.path[0] + '/' + file_name
+    row = json.loads(result.stdout.decode('utf-8'))['rows']
+    print(json.dumps(row, indent=2))
 
+    try:
+        new_json = open(path_to_file, 'w')
+        json.dump(row, data_source)
+        new_json.close()
+    except FileNotFoundError as e:
+        print(e)
+    except PermissionError as e:
+        print(e)
+"""
 
-get_cities()
+create_txt()

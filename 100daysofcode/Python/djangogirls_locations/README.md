@@ -1,10 +1,15 @@
 # Get list of cities from Django Girls Events
 
-Small script using Selenium to automate the process of getting all the cities a Django Girls workshop has happened and save it to a csv.
+Small script using Selenium to automate the process of getting all the cities a Django Girls workshop has happened and save it to a txt file.
 
 Information to be written in **data_source.py**:
 - url
-- location for the csv file
+- location for the file
+
+TODO:
+- [ ] Get city AND date info
+- [ ] Get only past of future workshops
+- [ ] Export to JSON
 
 To run this project after cloning it:
 
@@ -24,5 +29,5 @@ $ pipenv install
 
 - Run:
 ```
-$ pipenv run python login.py 
+$ pipenv run python get.py 
 ```
