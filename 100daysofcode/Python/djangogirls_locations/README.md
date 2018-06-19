@@ -11,7 +11,7 @@ TODO:
 - [ ] Get only past of future workshops
 - [ ] Export to JSON
 
-To run this project after cloning it:
+How to run this project after cloning it:
 
 - Install pipenv ([more info](https://docs.pipenv.org/install/#installing-pipenv))
 
