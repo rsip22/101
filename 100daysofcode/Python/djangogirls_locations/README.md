@@ -1,15 +1,16 @@
-# Get list of cities from Django Girls Events
+# Get a list of cities from DjangoGirls.org Events and export it to txt, csv or JSON 
 
 Small script using Selenium to automate the process of getting all the cities a Django Girls workshop has happened and save it to a txt file.
 
 Information to be written in **data_source.py**:
 - url
 - location for the file
+- name for the JSON file
 
 TODO:
 - [ ] Get city AND date info
 - [ ] Get only past of future workshops
-- [ ] Export to JSON
+- [x] Export to JSON
 
 How to run this project after cloning it:
 

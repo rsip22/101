@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 selenium = "==3.11.0"
+pylint = "*"
 
 [dev-packages]
 
