@@ -24,6 +24,7 @@ import data_source as website
 
 
 def get_cities():
+
     """ Get a list of cities from the website """
 
     driver = webdriver.Firefox()
@@ -50,35 +51,45 @@ def get_cities():
 
 
 def create_txt():
+
     """Save txt to local machine with the info"""
 
     locations = get_cities()
 
-    cities_list = website.data['location']
-    print('Cities file:', cities_list)
+    file_path = website.data['location'] + '.txt'
+    print('Cities file:', file_path)
 
-    with open(cities_list, 'w') as file:
+    with open(file_path, 'w') as file:
         new = 'Locations: ' + str(locations)
         file.write(new)
 
 
-"""
-def create_json(data_source, file_name):
-    
-    Saves JSON to local machine with the info
-    
-    path_to_file = sys.path[0] + '/' + file_name
-    row = json.loads(result.stdout.decode('utf-8'))['rows']
-    print(json.dumps(row, indent=2))
+def create_csv():
+    """Save csv to local machine with the info"""
 
-    try:
-        new_json = open(path_to_file, 'w')
-        json.dump(row, data_source)
-        new_json.close()
-    except FileNotFoundError as e:
-        print(e)
-    except PermissionError as e:
-        print(e)
-"""
+    locations = get_cities()
 
-create_txt()
+    file_path = website.data['location'] + '.csv'
+
+    print('Cities file:', file_path)
+
+    with open(file_path, 'w') as file:
+        write_location = csv.writer(file, dialect='excel')
+        write_location.writerow(locations)
+
+
+def create_json():
+    """Save JSON to local machine (current directory) with the info """
+
+    # file_path = website.data['location'] + '.json'
+    file_path = sys.path[0] + '/' + website.data['file_name'] + '.json'
+
+    with open(file_path, 'w', encoding='utf-8') as json_file:
+        json.dump(get_cities(), json_file, ensure_ascii=False, indent=1)
+
+    print('JSON file path:', file_path)
+
+
+# create_txt()
+# create_csv()
+create_json()
