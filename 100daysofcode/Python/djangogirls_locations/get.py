@@ -94,6 +94,7 @@ def create_json():
     print('JSON file path:', file_path)
 
 
-# create_txt()
-# create_csv()
-create_json()
+if __name__ == '__main__':
+    # create_txt()
+    # create_csv()
+    create_json()
