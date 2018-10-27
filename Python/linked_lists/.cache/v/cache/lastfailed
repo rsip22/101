@@ -1,0 +1,6 @@
+{
+  "LinkedList_test.py::BasicTestCase::test_salario_inteiro_vendas_mes_inteiro": true, 
+  "LinkedList_test.py::TestElement::test_Method1": true, 
+  "LinkedList_test.py::TestElement::test___init__": true, 
+  "LinkedList_test.py::TestElement::test_init": true
+}
