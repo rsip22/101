@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Roll the dice!</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <h1>Roll the dice!</h1>
+      <p><em>Click (or press ENTER) on the rice to roll.</em></p>
+      <main>
+        <div id="dice" onclick="rollDice();" tabindex="0">
+          <div class="spot top left" id="top_left">
+          </div>
+          <div class="spot top right" id="top_right">
+          </div>
+          <div class="spot middle left" id="middle_left">
+          </div>
+          <div class="spot middle center" id="middle">
+          </div>
+          <div class="spot middle right" id="middle_right">
+          </div>
+          <div class="spot bottom right" id="bottom_right">
+          </div>
+          <div class="spot bottom left" id="bottom_left">
+          </div>
+        </div>
+        <h2 id="result"></h2>
+      </main>
+      <footer>Based on <a href="">"Using arrays for selection".</a>
+      </footer>
+    </body>
+    <script>
+        document.getElementById("dice").addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode == 13) {
+                document.getElementById("dice").click();
+            }
+        });
+        let dot = new Array(2);
+        dot[false] = "white";
+        dot[true] = "black";
+        function rollDice() {
+            var roll = Math.floor(Math.random()*6)+1;
+            document.getElementById("top_right").style.backgroundColor = dot[roll > 1];
+            document.getElementById("top_left").style.backgroundColor = dot[roll == 4 || roll == 5 || roll == 6];
+            document.getElementById("middle").style.backgroundColor = dot[roll == 1 || roll == 3 || roll == 5];
+            document.getElementById("middle_left").style.backgroundColor = dot[roll == 6];
+            document.getElementById("middle_right").style.backgroundColor = dot[roll == 6];
+            document.getElementById("bottom_right").style.backgroundColor = dot[roll == 4 || roll == 5 || roll == 6];
+            document.getElementById("bottom_left").style.backgroundColor = dot[roll > 1];
+            document.getElementById("result").innerHTML = 'You got: ' + roll;
+        }
+    </script>
+</html>
