@@ -18,7 +18,8 @@ h1 {
     box-shadow: 0 10px 10px -6px black;
 }
 
-.animation:active {
+/* == Roll the dice == */
+#dice:active {
     background-color: white;
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
