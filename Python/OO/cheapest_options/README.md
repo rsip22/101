@@ -21,22 +21,26 @@ Escreva um programa para encontrar o estabelecimento mais barato. A entrada do p
 ---
 #### Exemplos:
 
-Entrada 1:
+###### Entrada 1:
 Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)
 
-Saída 1:
+###### Saída 1:
 Econômico
 
 ---
-Entrada 2:
+
+###### Entrada 2:
 Regular: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)
 
-Saída 2:
+###### Saída 2:
 Médio
+
 ---
-Entrada 3:
+
+###### Entrada 3:
 Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
-Saída 3:
+
+###### Saída 3:
 Esbanjar
 
 ---
