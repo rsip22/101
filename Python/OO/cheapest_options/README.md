@@ -25,18 +25,18 @@ Entrada 1:
 Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)
 
 Saída 1:
-Lakewood
+Econômico
 
 ---
 Entrada 2:
 Regular: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)
 
 Saída 2:
-Bridgewood
+Médio
 ---
 Entrada 3:
 Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)
 Saída 3:
-Ridgewood
+Esbanjar
 
 ---
