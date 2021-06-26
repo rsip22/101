@@ -7,6 +7,7 @@ Author: rsip22
 import datetime
 import re
 
+
 def reformat_date(dates):
     """
     Converts an array of dates to ISO format.
@@ -29,5 +30,6 @@ def reformat_date(dates):
                           formatted_date.day).isoformat())
 
     return reformated_dates
+
 
 print(reformat_date(['25th May 1912', '16th Dec 2018', '26th Dec 2061']))

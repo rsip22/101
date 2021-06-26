@@ -10,7 +10,7 @@ from operator import itemgetter
 
 NATIONALITY = set()             # Unique nationalities
 CLUBS = set()                   # Unique clubs
-PLAYERS_FIRST_NAME = list()     # Players first names
+PLAYERS_FULL_NAME = list()      # Players full names
 PLAYERS_WAGE = list()           # Items: (full_name, eur_wage)
 PLAYERS_AGE = list()            # Items: (full_name, age)
 AGE_RANGE = list()              # Items: age
@@ -44,7 +44,7 @@ with open('data.csv', newline='') as csvfile:
         AGE_RANGE.append(int(row['age']))
 
         if idx < FIRST_ON_THE_LIST:
-            PLAYERS_FIRST_NAME.append(copy.copy(row['full_name']))
+            PLAYERS_FULL_NAME.append(copy.copy(row['full_name']))
 
 # All questions refer to the file `data.csv`
 # You **CANNOT** use Pandas or NumPy to solve this challenge.
@@ -60,9 +60,9 @@ def q_2():
     return len(CLUBS)
 
 
-# **Q3.** List the first name of the first 20 players on the column  `full_name`.
+# **Q3.** List the full name of the first 20 players on the column  `full_name`.
 def q_3():
-    return PLAYERS_FIRST_NAME
+    return PLAYERS_FULL_NAME
 
 
 # **Q4.** Who are the top 10 players who made more money (use the columns `full_name` and `eur_wage`)?
@@ -82,4 +82,18 @@ def q_6():
 
 
 if __name__ == '__main__':
-    pass
+    print('Q1. How many unique nationalities (column `nationality`) exist on the file?')
+    print(q_1())
+    print('\nQ2. How many unique clubs (column `club`) exist on the file?')
+    print(q_2())
+    print('\nQ3. List the full name of the first 20 players on the column  `full_name`.')
+    for idx, answer in enumerate(q_3()):
+        print(idx + 1, answer)
+    print('\nQ4. Who are the top 10 players who made more money (use the columns `full_name` and `eur_wage`)?')
+    for idx, answer in enumerate(q_4()):
+        print(idx + 1, answer)
+    print('\nQ5. Who are the 10 oldest players?')
+    for idx, answer in enumerate(q_5()):
+        print(idx + 1, answer)
+    print('\nQ6. Count how many players have the same age')
+    print(q_6())

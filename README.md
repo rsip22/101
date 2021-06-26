@@ -33,4 +33,11 @@ stocks on  opening and closing for a specific weekday.
 [https://github.com/rsip22/101/tree/master/Python
 /query_api_stock_prices](https://github.com/rsip22/101/tree/master/Python/query_api_stock_prices)
 
+-------
+**Reformed dates**
+
+Module to convert an array of dates into ISO format.
+
+[https://github.com/rsip22/101/blob/master/Python/reformed_dates.py](https://github.com/rsip22/101/blob/master/Python/reformed_dates.py)
+
 Enjoy!
